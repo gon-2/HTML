@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>형변환</h1>
+    <pre>
+        String()  -> 문자형으로 변환
+        Number()  -> 숫자형으로 변환
+        Boolean() -> 불린형으로 변환
+
+        형변환이 필요한 이유 
+         "Hello" + "world" = "Hello world"
+         100 + 200 = 300
+
+         이때 "100" + 200 = ?? // 타입이 다르다면? 의도치않은 동작이 발생할 수 있음
+
+         수학과 영어의 점수를 입력받아 평균을 구하는 프로그램을 작성해보자
+
+         let mathScore = prompt("수학 몇점?"); 
+         let engScore = prompt("영어 몇점?");
+         let result = (nathScore + engScore) / 2;
+
+         console.dir(result); 
+         //prompt로 입력받은 값은 문자열로 들어오기 때문에 Missing initializer 에러가 발생하게 된다
+         
+         이때 mathScore는 90점, engScore는 80점 이라고 가정을 했을때  "9080" /2를 한 4540이 나오게된다
+         문자열("90" + "80")끼리 더해서 9080인데 / 2는 됐네? 하는 의문점이 드는데 자동 형 변환이 되었기 떄문이다
+         "6" / "2" = 3이 나오는데 이것이 자동 형변환이다. 이게 자동으로 이루어져 편리하다 생각 할 수 있지만
+         원인을 찾기 힘든 에러를 만드니 항상 의도를 가지고 원하는 타입으로 변환을 해주는것이 좋으며
+         이것을 명시적 형변환이라고 한다.
+    </pre>
+
+    <h1>String() : 문자열 형변환</h1>
+    <pre>
+        String() :항상 S를 대문자로 작성해야함, ()안의 값을 문자열로 변환해줌
+
+        console.dir(
+            String(3),
+            String(true),
+            String(false),
+            String(null),
+            String(undefined)
+        )
+        이렇게 형변환을 하게 되면 "3", "true", "false", "null", "undefined"로 문자형으로 변환된 값을 확인 할 수 있다.
+    </pre>
+
+    <h1>Number() : 숫자형 형변환</h1>
+    <pre>
+        Number() : 항상 N을 대문자로 작성해야함, ()안의 값을 숫자열로 변환해줌
+        
+        console.dir(
+            Number("1234");
+        )
+        이렇게 형변환을 하게 되면 문자열 "1234"가 숫자열1234로 변환된 것을 확인 할 수 있다.
+        만약 문자열 안에 글자가 들어가게 되면 NaN값이 나오게 된다.
+        하지만 true, false을 형변환 하게 된다면 0과 1의 값을 확인 할 수 있게 된다
+    </pre>
+
+    <h1>Boolean()</h1>
+    <pre>
+        Boolean()은 ()안의 자료형을 Boolean형으로 형변환해주며 false만 기억하면 된다
+        위 숫자형 형변환에서 flase를 형변환 하니 0이 나온것을 확인 할 수 있었다.
+
+        flase :  아래와 같은 값들은 false가 되고 이외에는 true가 된다
+                 * 숫자0
+                 * 빈 문자열 ''
+                 * null
+                 * undefined
+                 * NaN
+    </pre>
+
+    <h2>정리</h2>
+    <pre>
+        String() -> 문자형으로 변환
+        Number() -> 숫자형으로 변환 (이때 Number("문자")이면 NaN)
+        Boolean() ->()의 자료형을 Boolean형으로 변환
+
+        // Number(null) -> 0
+        // Number(undefined) -> NaN
+        // Number(0) -> flase
+        // Number('0') -> true
+        // Number('') -> false
+        // Number(' ') -> true
+    </pre>
+</body>
+</html>

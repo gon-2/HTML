@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>alert, prompt, confirm</h1>
+    <pre>
+        alert() : 이 함수가 실행이 되면 메세지를 띄우고 사용자가 확인버튼을 누르기 전까지 계속 떠잇음
+                   상호작용한다기 보단 일방적으로 떠있음.
+
+    </pre>
+
+    <pre>
+        prompt : 사용자에게 값을 입력 받을때 사용한다.
+
+        let name = prompt("이름을 입력하세요.");
+        alert("환영합니다, " + name + "님");
+        * 이렇게 사용하게 되면 alert창에 이름을 입력 하게되고 입력하고 난뒤 확인 버튼을 누르면
+        * alert창으로 환영합니다 name님 이 뜬다
+
+        ``으로 작성한다면 아래처럼 작성 할 수 있다.
+        let name = prompt("이름을 입력하세요.");
+        alert(`환영합니다, ${name}님`);
+
+        결과는 위와 동이랗게 나온다.
+
+        이때 prompt에 이름을 입력하지 않고 취소를 하게된다면 null값이 들어가게 된다.
+
+        prompt는 default값도 입력 할 수 있다.
+        let date = prompt("예약일을 입력해 주세요.", "2022-01");
+        위처럼 실행을 하게 되면 두번째 인수가 입력받을 default으로 들어온다.
+
+
+    </pre>
+
+    <pre>
+        confirm : 값을 확인 받을 떄 사용할 수 있다.
+
+        let isAdult = confirm("당신은 성인 입니까?");
+        이떄 alert창 이 뜨고 확인을 누르게 되면 true, 취소를 누르면 false값이 나온다.
+        사용자 액션을 한번 더 사용할때 사용하게 된다
+        ex) 구독을 취소하시겠습니까? 등등...
+    </pre>
+
+    <h2>단점</h2>
+    <pre>
+        이렇게 기본적으로 제공되는 창들은 간단하게 사용할 수 있지만 단점도 존재함
+
+        1. 스크립트 일시 정지: 창이 뜨게 되면 스크립트가 일시 정지 되며 창을 닫게 되면 이후 동작에 제한을 받는다
+        
+        2. 스타일링 x : 스타일링이 불가능하다. 위치와 모양을 정할수 없으며 브라우저마다 모양이 다르다.
+    </pre>
+</body>
+</html>

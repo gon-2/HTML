@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>함수</h1>
+    <pre>
+        함수(function)
+        서비스를 만들다보면 같거나 비슷한 동작들이 생긴다(팝업을 띄우거나, 결제같은거)
+        이런 동작들을 자주 사용하거나 여러번 사용한다면 하나로 만든다음 재활용 하는것이 좋음
+        중복코드가 줄어들고 유지보수가 편리해진다
+    </pre>
+
+
+
+    <script>
+        //  함수 작성방법:
+        //  함수    함수명   매개변수(매개변수는 여러개가 들어오거나 아예 안들어 올수도 있음)
+        function sayHello(name) {
+            console.log(`Hello, ${name}`);
+        }
+        // 함수 호출 
+        sayHello('Mike');
+
+        // 매개변수가 없는 함수를 만들어보자
+        function showError() {
+            alert('에러가 발생했습니다. 다시 시도해주세요.');
+        }
+        //showError(); // 실행하면 alert창이 뜨면서 에러를 알려준다.
+
+        //매개변수가 있는 함수를 만들어보자
+        function sayHello(name) {
+            let msg = `Hello, ${name}`;
+            console.dir(msg);
+        }
+
+        //이런식으로 여러번 호출 가능
+        sayHello('Mike');
+        sayHello('Jhon');
+        sayHello('Koo');
+
+        function message(name){
+            let message = 'Hello';
+            if(name){
+                massage = `Hello, ${name}`;
+            }
+            console.dir(massage);
+        }
+
+        message('Koo');
+
+
+        
+
+
+    </script>
+</body>
+
+</html>

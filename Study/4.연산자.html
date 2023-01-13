@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .note {
+            border: 1px solid;
+            min-height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="note">
+        <h1>연산자(Operators)</h1>
+        <pre>
+        + - * / % (더하기, 빼기, 곱하기,나누기, 나머지)
+
+        이때 나머지는 언제 사용할까 하겠지만 홀수 짝수를 구할때 유용하게 사용된다.
+        홀수 : x % 2 = 1
+        짝수 : y % 2 = 0 
+
+        연산자는 우선순위를 가지게 된다
+         * / > + -
+
+         //연산자 줄여서 쓰기
+         let num = 10;
+         num = num + 5;
+        이때 식을 줄인다면 num += 5; 가 된다 (+외의 - ,* , /, % 도 동일하다)
+
+        // 증가 연산자, 감소 연산자
+         let num = 10;
+         let result = num++;
+         이처럼 변수 뒤에 ++ 이 오게되면 식이 종료된 이후에 증가 한 11이 되고, 변수앞에 ++이 오게된다면 식이 시작되는때에 증가하는것을 확인 할 수 있다.
+
+
+
+         // 비교연산자, 조건문
+         <, >, <=, >=, ==, !=
+         == 는 두 값이 같은가?(혹은 동일한가)이다       // true
+         != 는 두 값이 다른가?(혹은 동일하지 않은가)이다 //false
+         
+         console.dir(10 > 5);  //true
+         console.dir(10 == 5); // false
+         console.dir(10 != 5); // true
+
+         동등 연산자의 다른 조건을 확인해보자
+         
+         let a = 1;
+         let b = '1';
+         console.dir(a==b);
+         이렇게 문자 '1'과 숫자 1을 동등연산자로 비교하여 콘솔로 확인 하게 되면 true가 나오는것을 확인할 수 있다.
+         이때 타입을 비교하고싶다면 아래와 같이 확인할 수 있다 
+         console.dir(a === b); // false
+         이것을 일치 연산자 라고 하는데 가급적 동등연산자보단 타입까지 비교해주는 일치연산자를 사용하는 것이 좋다고한다.
+         </pre>
+
+        <h1>조건문</h1>
+        <pre>
+        조건문은 조건에 따라 이후의 행동이 달라지게 만듦.
+       
+        <h2>if문</h2>
+        if문은 괄호안의 들어가는 조건을 평가해서 true면 실행
+
+        let age = 29;
+
+        if(age > 29){    // true
+            console.dir('환영합니다.');
+        }
+
+        if(age <= 19){   // false
+            console.dir('안녕히 가세요.');
+        }
+
+        // if, else if, else
+        // 추가 요구사항 : 
+        // 나이가 19살이라면 "수능 잘 치세요" 라는 문구를 보여주자
+
+        let age = 19;
+
+        if(age > 19){   
+            console.dir('환영합니다.!');
+        }else if(age == 19) {
+            console.dir('수능 잘 치세요!');
+        }else{
+            console.dir('안녕히 가세요!');
+        }
+          </pre>
+
+        <h1>논리 연산자</h1>
+        <pre>
+
+
+
+
+        3. !(not)  : true면 false를 반환, flase면 true를 반환한다.(true, false중 반대값을 반환함)
+        </pre>
+
+        <h2>||(or)</h2>
+        <pre>
+        1. ||(or)  : 여러개 중 하나라도 true면 true이다. 즉, 모든 값이 flase일때만 false를 반환한다.
+                     or는 첫번째 true를 발견하는 즉시 평가를 멈춤
+
+            ||( or) : 이름이 tom이거나성인이면 통과
+
+            let name = 'tom';
+            let age = 30;
+
+            if(name == 'tom' || age > 30){
+                console.rid('통과');
+            }
+        </pre>
+        <h2>AND</h2>
+        <pre>
+
+        2. &&(and) : 모든 값이 true면 true이다. 즉, 하나라도 false면 false를 반환한다.
+                     and는 첫번째 false를 발견하는 즉시 평가를 멈춤
+
+        // and
+        // 이름이 Mike이고, 성인이면 통과
+
+        let name = 'Mike';
+        let age = 10;
+
+        if(name == 'mike' && age > 19){
+            console.dir('통과');
+        }else{
+            console.dir('돌아가');
+        }
+        </pre>
+
+        <h2>NOT</h2>
+        <pre>
+        //not
+        // 나이를 입력받아 성인이 아니면 돌아가라고 하자..
+
+        let age = prompt('당신의 나이는?');
+        let isAge = isAdult > 19; // 19보다 큰 값이 들어오면 isAdult는 true가 된다
+
+        if(!isAdult){ // true가 아니라면
+            console.dir('돌아가');
+        }
+
+        </pre>
+    </div>
+</body>
+
+</html>l
